@@ -541,17 +541,25 @@
         }
 
         /* Contact Section */
-        .contact-container {
+        /* .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: start;
+        } */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2rem;  
         }
 
         .contact-item {
@@ -1083,7 +1091,7 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form">
+            <!-- <div class="contact-form">
                 <h3 class="mb-2">Send me a message</h3>
                 <form onsubmit="submitContactForm(event)">
                     <div class="form-group">
@@ -1101,7 +1109,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message 🚀</button>
                 </form>
-            </div>
+            </div> -->
 
         </div>
     </section>
