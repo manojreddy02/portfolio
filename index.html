@@ -1252,78 +1252,78 @@
             window.open('https://www.linkedin.com/in/manojreddy02/', '_blank');
         }
 
-        function submitContactForm(event) {
-            event.preventDefault();
+        // function submitContactForm(event) {
+        //     event.preventDefault();
 
-            const form = event.target;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const emailInput = form.querySelector('#email');
-            const emailError = document.getElementById('emailError');
+        //     const form = event.target;
+        //     const submitButton = form.querySelector('button[type="submit"]');
+        //     const emailInput = form.querySelector('#email');
+        //     const emailError = document.getElementById('emailError');
 
-            const name = form.querySelector('#from_name').value.trim();
-            const email = emailInput.value.trim();
-            const message = form.querySelector('#message').value.trim();
+        //     const name = form.querySelector('#from_name').value.trim();
+        //     const email = emailInput.value.trim();
+        //     const message = form.querySelector('#message').value.trim();
 
-            // Reset previous error
-            emailError.style.display = "none";
-            emailError.textContent = "";
+        //     // Reset previous error
+        //     emailError.style.display = "none";
+        //     emailError.textContent = "";
 
-            // Email regex
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     // Email regex
+        //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            // Validate email
-            if (!emailPattern.test(email)) {
-                emailError.textContent = "❌ Please enter a valid email address.";
-                emailError.style.display = "block";
-                emailInput.focus();
-                return;
-            }
+        //     // Validate email
+        //     if (!emailPattern.test(email)) {
+        //         emailError.textContent = "❌ Please enter a valid email address.";
+        //         emailError.style.display = "block";
+        //         emailInput.focus();
+        //         return;
+        //     }
 
-            // Validate other fields
-            if (!name || !message) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Missing fields',
-                    text: 'Please fill in all fields before submitting.',
-                    confirmButtonColor: '#6C63FF'
-                });
-                return;
-            }
+        //     // Validate other fields
+        //     if (!name || !message) {
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Missing fields',
+        //             text: 'Please fill in all fields before submitting.',
+        //             confirmButtonColor: '#6C63FF'
+        //         });
+        //         return;
+        //     }
 
-            // Disable button and show "Sending..."
-            submitButton.textContent = 'Sending... 📤';
-            submitButton.disabled = true;
+        //     // Disable button and show "Sending..."
+        //     submitButton.textContent = 'Sending... 📤';
+        //     submitButton.disabled = true;
 
-            // Send message via EmailJS
-            emailjs.sendForm('service_99t8p5la', 'template_5u0y16a', form, 'JTAWD87TtQAN0RENe')
-                .then(() => {
-                    Swal.fire({
-                        title: 'Message Sent! 📩',
-                        text: 'Thank you for getting in touch through my Certifications website. I’ve received your message and will personally review it as soon as possible',
-                        icon: 'success',
-                        confirmButtonText: 'Awesome!',
-                        confirmButtonColor: '#6C63FF',
-                        background: '#ffffff',
-                        color: '#333',
-                        showClass: { popup: 'animate__animated animate__fadeInDown' },
-                        hideClass: { popup: 'animate__animated animate__fadeOutUp' }
-                    });
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS Error:', error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops!',
-                        text: 'Something went wrong. Please try again later.',
-                        confirmButtonColor: '#6C63FF'
-                    });
-                })
-                .finally(() => {
-                    submitButton.textContent = 'Send Message 🚀';
-                    submitButton.disabled = false;
-                });
-        }
+        //     // Send message via EmailJS
+        //     emailjs.sendForm('service_99t8p5la', 'template_5u0y16a', form, 'JTAWD87TtQAN0RENe')
+        //         .then(() => {
+        //             Swal.fire({
+        //                 title: 'Message Sent! 📩',
+        //                 text: 'Thank you for getting in touch through my Certifications website. I’ve received your message and will personally review it as soon as possible',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Awesome!',
+        //                 confirmButtonColor: '#6C63FF',
+        //                 background: '#ffffff',
+        //                 color: '#333',
+        //                 showClass: { popup: 'animate__animated animate__fadeInDown' },
+        //                 hideClass: { popup: 'animate__animated animate__fadeOutUp' }
+        //             });
+        //             form.reset();
+        //         })
+        //         .catch((error) => {
+        //             console.error('EmailJS Error:', error);
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Oops!',
+        //                 text: 'Something went wrong. Please try again later.',
+        //                 confirmButtonColor: '#6C63FF'
+        //             });
+        //         })
+        //         .finally(() => {
+        //             submitButton.textContent = 'Send Message 🚀';
+        //             submitButton.disabled = false;
+        //         });
+        // }
 
 
         // Modal Functions
